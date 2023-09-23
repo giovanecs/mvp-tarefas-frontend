@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
+
+    <title>Meu MVP</title>
+</head>
+
+<body>
+    <div class="container">
+        <div id="dynamic-alert"></div>
+
+        <h2>Lista de Tarefas</h2>
+
+        <section class="newItem">
+            <div class="row">
+                <div class="col-md-3">
+                    <input type="text" id="inputTarefa" placeholder="Nova tarefa" class="form-control">
+                </div>
+                <div class="col-md-3">
+                    <button onclick="novaTarefa()" class="btn btn-primary btn-md">Adicionar</button>
+                </div>
+            </div>
+        </section>
+
+        <table id="myTable" class="table">
+            <tr>
+                <th>Id</th>
+                <th>Tarefa</th>
+                <th>Data de inicio</th>
+                <th>Data de conclusão</th>
+                <th></th>
+            </tr>
+        </table>
+
+
+        <div class="row g-5">
+            <div class="col-md-3">
+              <h2 class="text-body-emphasis">Tarefas pendentes</h2>
+              <ul class="list-group" id="tarefas-pendentes">
+                
+              </ul>
+            </div>
+
+            <div class="col-md-3">
+                <h2 class="text-body-emphasis">Tarefas iniciadas</h2>
+                <ul class="list-group" id="tarefas-iniciadas">
+                  
+                </ul>
+            </div>
+
+            <div class="col-md-3">
+                <h2 class="text-body-emphasis">Tarefas concluidas</h2>
+                <ul class="list-group" id="tarefas-concluidas">
+                  
+                </ul>
+            </div>
+
+         </div>
+
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="scripts.js"></script>
+
+</body>
+
+</html>
