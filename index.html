@@ -3,69 +3,103 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css">
+    <title>Minhas Tarefas</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.10.25/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <style>
+        .kanban-column {
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            padding: 10px;
+            margin: 0px;
+            min-height: 300px;
+            background-color: #f8f9fa;
+        }
 
-    <title>Meu MVP</title>
+        .kanban-item {
+            background-color: #f8f9fa;
+            border-radius: 5px;
+            padding: 10px;
+            margin: 0;
+            margin-bottom: 10px;
+            cursor: pointer;
+        }
+
+        ul {
+            list-style-type: none;
+        }
+    </style>
 </head>
 
 <body>
-    <div class="container">
-        <div id="dynamic-alert"></div>
+    <div class="container mt-5">
 
-        <h2>Lista de Tarefas</h2>
+        <h1 class="mb-4">Minhas Tarefas</h1>
 
-        <section class="newItem">
-            <div class="row">
-                <div class="col-md-3">
-                    <input type="text" id="inputTarefa" placeholder="Nova tarefa" class="form-control">
+        <div class="row mt-5 mb-4">
+            <div class="col-md-4">
+                <div class="kanban-column bg-danger" data-status="pendente">
+                    <h3><strong>Pendentes</strong></h3>
+                    <div id="pendingTasks">
+
+                    </div>
                 </div>
-                <div class="col-md-3">
-                    <button onclick="novaTarefa()" class="btn btn-primary btn-md">Adicionar</button>
+            </div>
+            <div class="col-md-4">
+                <div class="kanban-column bg-warning" data-status="iniciada">
+                    <h3><strong>Iniciadas</strong></h3>
+                    <div id="startedTasks">
+
+                    </div>
                 </div>
             </div>
-        </section>
+            <div class="col-md-4">
+                <div class="kanban-column bg-success" data-status="concluida">
+                    <h3><strong>Concluídas</strong></h3>
+                    <div id="completedTasks">
 
-        <table id="myTable" class="table">
-            <tr>
-                <th>Id</th>
-                <th>Tarefa</th>
-                <th>Data de inicio</th>
-                <th>Data de conclusão</th>
-                <th></th>
-            </tr>
-        </table>
-
-
-        <div class="row g-5">
-            <div class="col-md-3">
-              <h2 class="text-body-emphasis">Tarefas pendentes</h2>
-              <ul class="list-group" id="tarefas-pendentes">
-                
-              </ul>
+                    </div>
+                </div>
             </div>
+        </div>
 
-            <div class="col-md-3">
-                <h2 class="text-body-emphasis">Tarefas iniciadas</h2>
-                <ul class="list-group" id="tarefas-iniciadas">
-                  
-                </ul>
-            </div>
+        <!-- Add Task Form -->
+        <div class="mb-2 jumbotron">
+            <h2>Adicionar Tarefa</h2>
+            <form id="addTaskForm">
+                <div class="form-group">
+                    <label for="taskDescription">Descrição</label>
+                    <input type="text" class="form-control" id="taskDescription" required>
+                </div>
+                <button type="submit" class="btn btn-primary">Adicionar</button>
+            </form>
+        </div>
 
-            <div class="col-md-3">
-                <h2 class="text-body-emphasis">Tarefas concluidas</h2>
-                <ul class="list-group" id="tarefas-concluidas">
-                  
-                </ul>
-            </div>
-
-         </div>
+        <!-- Task Tables -->
+        <div class="pb-4">
+            <h2>Todas as Tarefas</h2>
+            <table id="allTasks" class="table table-striped table-bordered">
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Descrição</th>
+                        <th>Início</th>
+                        <th>Conclusão</th>
+                        <th>Ações</th>
+                    </tr>
+                </thead>
+                <tbody></tbody>
+            </table>
+        </div>
 
     </div>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="scripts.js"></script>
 
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.10.25/js/jquery.dataTables.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.bundle.min.js"></script>
+    <script src="scripts.js"></script>
 </body>
 
 </html>
