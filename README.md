@@ -30,7 +30,7 @@ O projeto de backend pode ser obtido em:
 
 https://github.com/giovanecs/mvp-tarefas-backend
 
-o projeto de backend realiza uma consulta a uma API externa, sendo necessário esta conectado a internet 
+o projeto de backend realiza uma consulta a uma API externa (https://brasilapi.com.br/api/feriados/v1/2024), sendo necessário esta conectado a internet 
 para que o mesmo possa acessa-la.
 
 ![alt text](image.png)
