@@ -145,7 +145,7 @@ const atualizarTarefa = async (id, operacao) => {
             table.row($(`button[onclick="${operacao}Task(${id})"]`).closest('tr')).remove().draw();
             insertList(data.id, data.descricao, data.data_inicio, data.data_conclusao, table);
             table.draw();
-            alert(`Tarefa ${operacao}ada com sucesso!!!`);
+            alert(`Tarefa atualizada com sucesso!!!`);
         })
         .catch((error) => {
             console.error(error);
